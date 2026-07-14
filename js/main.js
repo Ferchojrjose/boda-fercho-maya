@@ -174,20 +174,12 @@
                 },
         });
 
-        $('#count').countdown('2017/09/01', function(event) {
-            $(this).html(event.strftime('' + 
-                '<div class="count-block days">%D<span class="count-label">day%!d</span></div>' + 
-                '<div class="count-block hours">%H<span class="count-label">%!H:hour,hours;</span></div>' + 
-                '<div class="count-block minutes">%M<span class="count-label">%!M:minute,minutes;</span></div>' + 
-                '<div class="count-block seconds">%S<span class="count-label">%!S:second,seconds;</span></div>'
-            ));
-        });
-
         $('.gallery-grid').magnificPopup({
             delegate: 'a',
             type: 'image',
             tLoading: 'Loading image #%curr%...',
             mainClass: 'mfp-img-mobile',
+            closeMarkup: '<button title="%title%" type="button" class="mfp-close gallery-close">&times;</button>',
             gallery: {
                 enabled: true,
                 navigateByImgClick: true,
