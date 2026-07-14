@@ -324,8 +324,11 @@ textarea.form-control, textarea.form-control:focus {
   display: inline-block;
   position: absolute;
   top: 0;
-  background: url(../images/heart_img.png) no-repeat;
-  background-size: 100%;
+  background-color: #E1DFE2;
+  -webkit-mask: url(../images/heart_img.png) no-repeat;
+  mask: url(../images/heart_img.png) no-repeat;
+  -webkit-mask-size: 100%;
+  mask-size: 100%;
   -webkit-animation: bounce 2.0s infinite ease-in-out;
   animation: bounce 2.0s infinite ease-in-out;
 }
@@ -391,43 +394,15 @@ textarea.form-control, textarea.form-control:focus {
 .header .container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   height: 100%;
 }
 
-.header .logo-container {
-  float: none;
-}
-
-.header .logo-container .header-logo {
-  margin: 0;
-  padding: 0;
-  color: #C8B6A8;
-  font-size: 27px;
-  font-family: 'Courgette', Helvetica, sans-serif;
-  line-height: 1em;
-}
-
-.header .logo-container .header-logo span.main-color {
-  color: #E1DFE2;
-}
-
-.header-date {
-  float: none;
-}
-
-.header-date p {
-  margin: 0;
-  padding: 0;
-  font-size: 18px;
-  line-height: 1em;
-  color: #C8B6A8;
-  font-family: Roboto;
-  font-weight: 300;
-}
-
-.header-date p span.main-color {
-  color: #E1DFE2;
+.header-logo-img {
+  max-height: 44px;
+  max-width: 100%;
+  width: auto;
+  height: auto;
 }
 
 .main-nav {
@@ -525,31 +500,25 @@ p.intro {
 4.1. Home Section
 ======================================= */
 .home-section {
-  height: 100%;
-  min-height: 600px;
   position: relative;
+}
+
+.hs-image {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .hs-main-content {
   z-index: 1;
-  position: relative;
-}
-
-.hs-image-block,
-.footer-image-block {
   position: absolute;
-  z-index: 0;
   top: 0;
   bottom: 0;
-  right: 0;
   left: 0;
-  display: block;
-  overflow: hidden;
-  background-size: cover;
-  -webkit-background-size: cover;
-  background-attachment: scroll;
-  background-position: center center;
-  background-repeat: no-repeat;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .hs-mask,
@@ -564,7 +533,7 @@ p.intro {
 
 .hs-section-title {
   text-align: center;
-  margin: 135px 0;
+  margin: 0;
 }
 
 .hs-section-title h1 {
@@ -1012,6 +981,35 @@ a.button.btn-waze:hover {
     color: #fff;
 }
 
+/* Botón X para cerrar la imagen de la galería */
+.mfp-wrap .mfp-close.gallery-close,
+.mfp-image-holder .mfp-close.gallery-close {
+    position: fixed;
+    width: 46px;
+    height: 46px;
+    line-height: 44px;
+    top: 15px;
+    right: 15px;
+    left: auto;
+    padding: 0;
+    font-size: 32px;
+    color: #fff;
+    opacity: 1;
+    background-color: #BBB6A4;
+    border-radius: 50%;
+    text-align: center;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    z-index: 1046;
+}
+
+.mfp-wrap .mfp-close.gallery-close:hover,
+.mfp-wrap .mfp-close.gallery-close:focus {
+    background-color: #5F5F43;
+    color: #fff;
+    opacity: 1;
+}
+
 
 
 /* =======================================
@@ -1050,12 +1048,25 @@ a.button.btn-waze:hover {
   position: relative;
 }
 
+.footer-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .footer-title {
-  position: relative;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   text-align: center;
   color: #fff;
   z-index: 1;
-  padding: 180px 20px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .footer-title h2 {
@@ -1100,9 +1111,8 @@ a.button.btn-waze:hover {
     border-bottom: 1px solid #f2f2f2;
   }
 
-  .header .logo-container .header-logo {
-    font-size: 21px;
-    line-height: 1em;
+  .header-logo-img {
+    max-height: 32px;
   }
 
   .menu-toggle {
@@ -1173,7 +1183,7 @@ a.button.btn-waze:hover {
   }
 
   .hs-section-title {
-    margin: 100px 0;
+    margin: 0;
   }
 
   .story-row {
@@ -1233,12 +1243,8 @@ a.button.btn-waze:hover {
 }
 
 @media only screen and (max-width: 769px) {
-  .home-section {
-    min-height: 450px;
-  }
-
   .hs-section-title {
-    margin: 70px 0;
+    margin: 0;
   }
 
   .hs-section-title h1 {
@@ -1347,3 +1353,4 @@ a.button.btn-waze:hover {
     font-size: 10px;
   }
 }
+
