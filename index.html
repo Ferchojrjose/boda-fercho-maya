@@ -105,7 +105,7 @@
               </div>
             </div>
             <div class="col-sm-12 col-md-5 story-block text-center">
-              <h3>Morbi dapibus enim mollis</h3>
+              <h3>CEREMONIA</h3>
               <p>Maecenas vestibulum volutpat nisl. Nulla faucibus, quam eget auctor vulputate, elit ante commodo erat,
                 et pretium purus massa et nunc. Duis vitae nisl eget metus gravida maximus non mattis nunc. Etiam
                 posuere sodales mollis. Donec viverra egestas lorem, at varius sem congue quis.</p>
@@ -128,7 +128,7 @@
               </div>
             </div>
             <div class="col-sm-12 col-md-5 col-md-pull-7 story-block text-center">
-              <h3>Sed vitae eros nisl</h3>
+              <h3>RECEPCIÓN y BRINDIS</h3>
               <p>Maecenas vestibulum volutpat nisl. Nulla faucibus, quam eget auctor vulputate, elit ante commodo erat,
                 et pretium purus massa et nunc. Duis vitae nisl eget metus gravida maximus non mattis nunc. Etiam
                 posuere sodales mollis. Donec viverra egestas lorem, at varius sem congue quis.</p>
@@ -151,7 +151,7 @@
               </div>
             </div>
             <div class="col-sm-12 col-md-5 story-block text-center">
-              <h3>Sed scelerisque</h3>
+              <h3>CORTE DEL PASTEL</h3>
               <p>Maecenas vestibulum volutpat nisl. Nulla faucibus, quam eget auctor vulputate, elit ante commodo erat,
                 et pretium purus massa et nunc. Duis vitae nisl eget metus gravida maximus non mattis nunc. Etiam
                 posuere sodales mollis. Donec viverra egestas lorem, at varius sem congue quis.</p>
@@ -189,9 +189,11 @@
                 <div class="event-date"><i class="fa fa-calendar"></i> Sábado, 12 Diciembre 2026</div>
                 <div class="event-time"><i class="fa fa-clock-o"></i> 16:30 PM - 20:00 PM</div>
                 <div class="event-address"><i class="fa fa-map-marker"></i> Km 22.4, Carr. a Fraijanes, Guatemala</div>
-                <a class="button small-button lightbox mfp-iframe btn-waze"
-                  href="https://maps.google.com/maps?q=221B+Baker+Street,+London,+United+Kingdom"
-                  title="The Ceremony">Ver Waze</a><!-- Do not change 'https://maps.google.com/maps?q=' in the href, simply change the address. Remake "221B Baker Street, London, United Kingdom +", as example, in this form: "221B+Baker+Street,+London,+United+Kingdom". -->
+                <a class="button small-button btn-waze"
+                  href="https://ul.waze.com/ul?venue_id=176619665.1766458794.7737161&overview=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location"
+                  target="_blank" rel="noopener" title="Ver ubicación en Waze">Ver Waze</a>
+                <a class="button small-button btn-mapa lightbox" href="images/map_img.jpeg" title="Mapa del evento">Ver
+                  Mapa</a>
               </div>
             </div>
             <!-- /Ceremony Block -->
@@ -269,6 +271,58 @@
       </section>
       <!-- /Gallery Section -->
 
+      <!-- Gift Registry Section -->
+      <section id="gift" class="our-story section-boxed">
+        <div class="container">
+          <div class="section-title">
+            <h2>Mesa De Regalos</h2>
+            <p class="intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id tellus pretium quam sodales
+              luctus. Nunc nec lacus ac arcu iaculis accumsan dictum a nulla. Nullam malesuada pellentesque turpis, eu
+              elementum risus sagittis in. Nunc sit amet arcu justo.</p>
+          </div>
+
+          <div class="row">
+            <!-- Gift Block CEMACO-->
+            <div class="col-md-6 event-block">
+              <div class="event-photo scale-image-effect">
+                <img src="images/photo_cemaco.jpg" alt="Mesa de regalos">
+              </div>
+
+              <div class="event-title">
+                <h3>Cemaco</h3>
+              </div>
+
+              <div class="event-info">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id tellus pretium quam sodales luctus.
+                  Nunc nec lacus ac arcu iaculis accumsan dictum a nulla.</p>
+                <a class="button small-button btn-waze"
+                  href="https://www.cemaco.com/list/BODACERRANOVALESQUEZ12122026"
+                  target="_blank" rel="noopener" title="Dar regalo en Cemaco">Dar Regalo</a>
+              </div>
+            </div>
+            <!-- /Gift Block CEMACO -->
+
+            <!-- Gift Block Lluvia de Sobres -->
+            <div class="col-md-6 event-block">
+              <div class="event-photo scale-image-effect">
+                <img src="images/photo_lluvia_sobres.jpg" alt="Mesa de regalos">
+              </div>
+
+              <div class="event-title">
+                <h3>Lluvia De Sobres</h3>
+              </div>
+
+              <div class="event-info">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id tellus pretium quam sodales luctus.
+                  Nunc nec lacus ac arcu iaculis accumsan dictum a nulla.</p>
+              </div>
+            </div>
+            <!-- /Gift Block Lluvia de Sobres -->
+          </div>
+        </div>
+      </section>
+      <!-- /Gift Registry Section -->
+
       <!-- RSVP Section -->
       <section id="rsvp" class="rsvp section-boxed">
         <div class="container">
@@ -280,55 +334,7 @@
           </div>
 
           <div class="row">
-            <!-- RSVP Form -->
-            <form id="rsvp-form" class="rsvp-form" method="post" action="rsvp_form/rsvp_form.php" novalidate>
-              <div class="col-md-12">
-                <div class="messages"></div>
-              </div>
-
-              <div class="controls">
-                <div class="col-sm-12 col-md-6">
-                  <div class="form-group">
-                    <input id="form_name" type="text" name="name" class="form-control" placeholder="Full Name"
-                      required="required" data-error="Name is required.">
-                    <i class="form-control-icon fa fa-user"></i>
-                    <div class="help-block with-errors"></div>
-                  </div>
-
-                  <div class="form-group">
-                    <input id="form_email" type="email" name="email" class="form-control" placeholder="Email Address"
-                      required="required" data-error="Valid email is required.">
-                    <i class="form-control-icon fa fa-envelope"></i>
-                    <div class="help-block with-errors"></div>
-                  </div>
-
-                  <div class="form-group">
-                    <select multiple id="form_events" name="events" class="form-control" required="required"
-                      data-error="Please select Event">
-                      <option selected value="Wedding Day">Wedding Day</option>
-                      <option value="The Ceremony">The Ceremony</option>
-                      <option value="The Party">The Party</option>
-                    </select>
-                    <i class="form-control-icon fa fa-check-square"></i>
-                    <div class="help-block with-errors"></div>
-                  </div>
-                </div>
-
-                <div class="col-sm-12 col-md-6">
-                  <div class="form-group message-group">
-                    <textarea id="form_message" name="message" class="form-control" placeholder="Leave Your Message"
-                      rows="4" required="required" data-error="Please, leave a message."></textarea>
-                    <i class="form-control-icon fa fa-comment"></i>
-                    <div class="help-block with-errors"></div>
-                  </div>
-                </div>
-
-                <div class="col-sm-12 col-md-12 text-center">
-                  <input type="submit" class="button btn-send disabled" value="Confirmar">
-                </div>
-              </div>
-            </form>
-            <!-- /RSVP Form -->
+            <!-- Nuevo formulario de confirmación (pendiente) -->
           </div>
         </div>
       </section>
@@ -340,7 +346,7 @@
         <div class="footer-mask"></div>
 
         <div class="footer-title">
-          <h2>Muchas Gracias!</h2>
+          <!--<h2>Muchas Gracias!</h2> -->
         </div>
       </footer>
       <!-- /Footer (Thank You block) -->

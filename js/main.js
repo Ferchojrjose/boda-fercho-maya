@@ -129,7 +129,8 @@
 
             // Class that is added to popup wrapper and background
             // make it unique to apply your CSS animations just to this exact popup
-            mainClass: 'mfp-fade',
+            mainClass: 'mfp-fade mfp-img-mobile',
+            closeMarkup: '<button title="%title%" type="button" class="mfp-close gallery-close">&times;</button>',
             image: {
                 // options for image content type
                 titleSrc: 'title'
