@@ -476,6 +476,7 @@ textarea.form-control, textarea.form-control:focus {
 #our-story .section-title h2,
 #events .section-title h2,
 #gallery .section-title h2,
+#gift .section-title h2,
 #rsvp .section-title h2 {
   color: #C8B6A8;
 }
@@ -909,16 +910,38 @@ ul.social-links li a:hover i {
   margin-right: 5px;
 }
 
-a.button.btn-waze {
+a.button.btn-waze,
+a.button.btn-mapa {
   border-color: #BBB6A4;
   background: none;
   color: #BBB6A4;
+  margin: 5px 6px 0;
 }
 
-a.button.btn-waze:hover {
+a.button.btn-waze:hover,
+a.button.btn-mapa:hover {
   border-color: #BBB6A4;
   background-color: #BBB6A4;
   color: #fff;
+}
+
+/* Bloques de Mesa de Regalos a la misma altura (escritorio) */
+@media only screen and (min-width: 992px) {
+  #gift .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  #gift .event-block {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+
+  #gift .event-block .event-info {
+    flex: 1 1 auto;
+    margin-bottom: 0;
+  }
 }
 
 
@@ -1015,29 +1038,6 @@ a.button.btn-waze:hover {
 /* =======================================
 4.6. RSVP Section
 ======================================= */
-.message-group .form-control {
-  min-height: 218px;
-}
-
-.rsvp-form .form-group select {
-  overflow: auto;
-  padding-right: 35px;
-  font-weight: 300;
-}
-
-.rsvp-form .button {
-  margin: 15px 0;
-  border-color: #BBB6A4;
-  background: none;
-  color: #BBB6A4;
-}
-
-.rsvp-form .button:hover {
-  border-color: #BBB6A4;
-  background-color: #BBB6A4;
-  color: #fff;
-}
-
 
 
 
