@@ -334,7 +334,77 @@
           </div>
 
           <div class="row">
-            <!-- Nuevo formulario de confirmación (pendiente) -->
+            <!-- RSVP Form -->
+            <form id="rsvp-form" class="rsvp-form" method="post" action="rsvp_form/rsvp_form.php" novalidate>
+              <!-- Columna izquierda -->
+              <div class="col-sm-12 col-md-6">
+
+                <!-- Fila: código + botón Buscar -->
+                <div class="form-group">
+                  <div class="code-search-group">
+                    <input id="form_code" type="text" name="code" class="form-control"
+                      placeholder="Ingresar Codigo">
+                    <button type="button" class="button btn-buscar">Buscar</button>
+                  </div>
+                </div>
+
+                <!-- Cuadro: Lista de Invitados -->
+                <div class="guest-box">
+                  <div class="guest-box-title">
+                    <h3>Lista de Invitados</h3>
+                  </div>
+
+                  <ul class="guest-list">
+                    <li class="guest-item">
+                      <label for="guest_1">
+                        <span class="guest-name">Nombre del invitado 1</span>
+                        <input type="checkbox" id="guest_1" name="guests[]" value="Nombre del invitado 1">
+                      </label>
+                    </li>
+                    <li class="guest-item">
+                      <label for="guest_2">
+                        <span class="guest-name">Nombre del invitado 2</span>
+                        <input type="checkbox" id="guest_2" name="guests[]" value="Nombre del invitado 2">
+                      </label>
+                    </li>
+                    <li class="guest-item">
+                      <label for="guest_3">
+                        <span class="guest-name">Nombre del invitado 3</span>
+                        <input type="checkbox" id="guest_3" name="guests[]" value="Nombre del invitado 3">
+                      </label>
+                    </li>
+                    <li class="guest-item">
+                      <label for="guest_4">
+                        <span class="guest-name">Nombre del invitado 4</span>
+                        <input type="checkbox" id="guest_4" name="guests[]" value="Nombre del invitado 4">
+                      </label>
+                    </li>
+                  </ul>
+                </div>
+                <!-- /Cuadro: Lista de Invitados -->
+
+              </div>
+              <!-- /Columna izquierda -->
+
+              <!-- Columna derecha -->
+              <div class="col-sm-12 col-md-6">
+
+                <div class="form-group message-group">
+                  <textarea id="form_message" name="message" class="form-control"
+                    placeholder="Déjanos un mensaje especial..."></textarea>
+                </div>
+
+              </div>
+              <!-- /Columna derecha -->
+
+              <!-- Fila: botón Confirmar -->
+              <div class="col-sm-12 col-md-12 text-center">
+                <button type="submit" class="button btn-confirmar">Confirmar</button>
+              </div>
+              <!-- /Fila: botón Confirmar -->
+
+            </form>
+            <!-- /RSVP Form -->
           </div>
         </div>
       </section>

@@ -1036,6 +1036,155 @@ a.button.btn-mapa:hover {
 4.6. RSVP Section
 ======================================= */
 
+/* Área de mensaje */
+.message-group .form-control {
+  min-height: 244px;
+  resize: vertical;
+}
+
+/* Separación entre columnas al apilarse (tablet / móvil) */
+@media only screen and (max-width: 991px) {
+  .rsvp-form .message-group {
+    margin-top: 20px;
+  }
+}
+
+/* Fila: input de código + botón Buscar */
+.code-search-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.code-search-group .form-control {
+  flex: 1 1 auto;
+  min-width: 0;
+  height: 46px;
+}
+
+.code-search-group .btn-buscar {
+  flex: 0 0 auto;
+  margin: 0;
+  padding: 0 22px;
+  height: 46px;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  white-space: nowrap;
+  font-size: 0.875em;
+  border-color: #BBB6A4;
+  background-color: #BBB6A4;
+  color: #fff;
+}
+
+.code-search-group .btn-buscar:hover {
+  border-color: #5F5F43;
+  background-color: #5F5F43;
+  color: #fff;
+}
+
+/* Botón Confirmar */
+.btn-confirmar {
+  margin: 25px 0 0;
+  min-width: 200px;
+  border-color: #BBB6A4;
+  background-color: #BBB6A4;
+  color: #fff;
+}
+
+.btn-confirmar:hover {
+  border-color: #5F5F43;
+  background-color: #5F5F43;
+  color: #fff;
+}
+
+/* Cuadro: Lista de Invitados */
+.guest-box {
+  width: 100%;
+  border: 1px solid #d5d5d5;
+  background: #fff;
+}
+
+.guest-box-title {
+  background-color: #5F5F43;
+  padding: 12px 15px;
+}
+
+.guest-box-title h3 {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.2;
+  color: #E1DFE2;
+  text-align: center;
+}
+
+.guest-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  /* 4 invitados visibles (48px c/u + separadores); a partir del 5º aparece scroll */
+  max-height: 195px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.guest-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.guest-list::-webkit-scrollbar-track {
+  background: #f2f1ef;
+}
+
+.guest-list::-webkit-scrollbar-thumb {
+  background: #BBB6A4;
+  border-radius: 4px;
+}
+
+.guest-list::-webkit-scrollbar-thumb:hover {
+  background: #5F5F43;
+}
+
+.guest-item {
+  border-bottom: 1px solid #ececec;
+}
+
+.guest-item:last-child {
+  border-bottom: 0;
+}
+
+.guest-item label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0;
+  padding: 12px 15px;
+  cursor: pointer;
+  font-weight: 300;
+}
+
+.guest-item label:hover {
+  background-color: #f7f6f4;
+}
+
+.guest-item .guest-name {
+  flex: 1 1 auto;
+  min-width: 0;
+  color: #666;
+}
+
+.guest-item input[type="checkbox"] {
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  cursor: pointer;
+  accent-color: #BBB6A4;
+}
+
 
 
 /* =======================================
