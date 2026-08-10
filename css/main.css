@@ -35,6 +35,15 @@
 @import url('https://fonts.googleapis.com/css?family=Courgette');
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i&subset=cyrillic');
 
+/* Fuente personalizada Cartesius Small Caps */
+@font-face {
+  font-family: 'cartesius-smallcaps';
+  src: url('../fonts/cartesius-smallcaps.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 
 /* ============================================================================= 
 2. General styles
@@ -73,7 +82,7 @@ a:visited, a:visited:hover {
 
 h1, h2, h3, h4, h5, h6 {
   color: #353535;
-  font-family: 'Courgette', Helvetica, sans-serif;
+  font-family: 'cartesius-smallcaps', 'Courgette', Helvetica, sans-serif;
   line-height: 1.5em;
   margin-top: 0;
   margin-bottom: 10px;
@@ -108,6 +117,7 @@ p {
   font-size: 1em;
   margin: 0 0 10px;
   font-weight: 300;
+  font-family: 'cartesius-smallcaps', 'Roboto', Helvetica, sans-serif;
 }
 
 p.lead {
@@ -474,6 +484,7 @@ textarea.form-control, textarea.form-control:focus {
 #events .section-title h2,
 #gallery .section-title h2,
 #gift .section-title h2,
+#dresscode .section-title h2,
 #rsvp .section-title h2 {
   color: #C8B6A8;
 }
@@ -1085,6 +1096,18 @@ a.button.btn-mapa:hover {
   color: #fff;
 }
 
+.code-message {
+  margin: 8px 0 0;
+  font-size: 0.85em;
+  font-weight: 300;
+  color: #c0392b;
+  min-height: 1em;
+}
+
+.code-message:empty {
+  margin: 0;
+}
+
 /* Botón Confirmar */
 .btn-confirmar {
   margin: 25px 0 0;
@@ -1098,6 +1121,44 @@ a.button.btn-mapa:hover {
   border-color: #5F5F43;
   background-color: #5F5F43;
   color: #fff;
+}
+
+.btn-confirmar:disabled,
+.btn-confirmar:disabled:hover {
+  border-color: #d5d2c9;
+  background-color: #d5d2c9;
+  color: #fff;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Botón en estado de carga (spinner) */
+.btn-confirmar.is-loading,
+.btn-confirmar.is-loading:hover {
+  border-color: #BBB6A4;
+  background-color: #BBB6A4;
+  opacity: 1;
+  cursor: wait;
+}
+
+.btn-spinner {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  vertical-align: middle;
+  border: 2px solid rgba(255, 255, 255, 0.45);
+  border-top-color: #fff;
+  border-radius: 50%;
+  -webkit-animation: btnspin 0.7s linear infinite;
+  animation: btnspin 0.7s linear infinite;
+}
+
+@-webkit-keyframes btnspin {
+  to { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes btnspin {
+  to { transform: rotate(360deg); }
 }
 
 /* Cuadro: Lista de Invitados */
@@ -1120,34 +1181,70 @@ a.button.btn-mapa:hover {
   text-align: center;
 }
 
-.guest-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  /* 4 invitados visibles (48px c/u + separadores); a partir del 5º aparece scroll */
-  max-height: 195px;
+/* Contenedor con scroll (encabezado fijo + lista) */
+.guest-scroll {
+  /* encabezado + 4 invitados visibles; a partir del 5º aparece scroll */
+  max-height: 230px;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 }
 
-.guest-list::-webkit-scrollbar {
+.guest-scroll::-webkit-scrollbar {
   width: 8px;
 }
 
-.guest-list::-webkit-scrollbar-track {
+.guest-scroll::-webkit-scrollbar-track {
   background: #f2f1ef;
 }
 
-.guest-list::-webkit-scrollbar-thumb {
+.guest-scroll::-webkit-scrollbar-thumb {
   background: #BBB6A4;
   border-radius: 4px;
 }
 
-.guest-list::-webkit-scrollbar-thumb:hover {
+.guest-scroll::-webkit-scrollbar-thumb:hover {
   background: #5F5F43;
 }
 
+.guest-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Encabezado de columnas (Confirmar / No Asistiré) */
+.guest-head {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  padding: 8px 15px;
+  background-color: #f2f1ef;
+  border-bottom: 1px solid #e0ddd7;
+}
+
+.guest-head-name {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.guest-head-col {
+  flex: 0 0 auto;
+  width: 78px;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  color: #5F5F43;
+}
+
+/* Filas de invitados */
 .guest-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
   border-bottom: 1px solid #ececec;
 }
 
@@ -1155,40 +1252,281 @@ a.button.btn-mapa:hover {
   border-bottom: 0;
 }
 
-.guest-item label {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  margin: 0;
-  padding: 12px 15px;
-  cursor: pointer;
-  font-weight: 300;
-}
-
-.guest-item label:hover {
-  background-color: #f7f6f4;
-}
-
 .guest-item .guest-name {
   flex: 1 1 auto;
   min-width: 0;
   color: #666;
+  font-weight: 300;
 }
 
-.guest-item input[type="checkbox"] {
+.guest-choice {
   flex: 0 0 auto;
+  width: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.guest-choice input[type="radio"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   width: 18px;
   height: 18px;
   margin: 0;
   cursor: pointer;
-  accent-color: #BBB6A4;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  background-color: #e0ddd7;
+  -webkit-transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease;
+}
+
+.guest-choice input[type="radio"]:checked {
+  background-color: #BBB6A4;
+}
+
+/* Modal de resultado (confirmación / error) */
+.rsvp-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9998;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.rsvp-modal[hidden] {
+  display: none;
+}
+
+.rsvp-modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(53, 53, 53, 0.55);
+}
+
+.rsvp-modal-box {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 420px;
+  background: #fff;
+  border-radius: 4px;
+  padding: 40px 30px 30px;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+  -webkit-animation: modalIn 0.25s ease;
+  animation: modalIn 0.25s ease;
+}
+
+@keyframes modalIn {
+  from { opacity: 0; transform: translateY(-12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.rsvp-modal-close {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  width: auto;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-size: 26px;
+  line-height: 1;
+  color: #9c9c9c;
+  cursor: pointer;
+}
+
+.rsvp-modal-close:hover {
+  color: #5F5F43;
+  background: none;
+}
+
+.rsvp-modal-icon {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 38px;
+  color: #fff;
+}
+
+.rsvp-modal.is-success .rsvp-modal-icon {
+  background-color: #BBB6A4;
+}
+
+.rsvp-modal.is-error .rsvp-modal-icon {
+  background-color: #d9534f;
+}
+
+.rsvp-modal-message {
+  margin: 0 0 25px;
+  font-size: 17px;
+  color: #5F5F43;
+}
+
+.rsvp-modal-ok {
+  min-width: 140px;
+  border-color: #BBB6A4;
+  background-color: #BBB6A4;
+  color: #fff;
+}
+
+.rsvp-modal-ok:hover {
+  border-color: #5F5F43;
+  background-color: #5F5F43;
+  color: #fff;
 }
 
 
 
 /* =======================================
-4.7. Footer Section (Thank You Section)
+4.7. Dress Code Section
+======================================= */
+.dresscode-row {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  margin-top: 10px;
+}
+
+.dresscode-group {
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.dresscode-head {
+  margin-bottom: 6px;
+}
+
+.dresscode-head i {
+  display: block;
+  font-size: 40px;
+  color: #BBB6A4;
+  margin-bottom: 10px;
+}
+
+.dresscode-head h3 {
+  margin: 0;
+  font-size: 24px;
+  color: #5F5F43;
+}
+
+.dresscode-note {
+  margin: 0 0 22px;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #9c9c9c;
+}
+
+.dresscode-colors {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.dresscode-color {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.color-swatch {
+  position: relative;
+  display: block;
+  width: 78px;
+  height: 78px;
+  border-radius: 50%;
+  border: 1px solid #e0ddd7;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Marca de "color a evitar" (círculo con diagonal) */
+.color-swatch::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border: 2px solid #c07a72;
+  border-radius: 50%;
+  opacity: 0.9;
+}
+
+.color-swatch::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -5px;
+  right: -5px;
+  height: 2px;
+  margin-top: -1px;
+  background: #c07a72;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.color-name {
+  margin-top: 16px;
+  font-size: 15px;
+  font-weight: 400;
+  color: #5F5F43;
+}
+
+/* Divisor vertical entre Mujeres y Hombres (escritorio) */
+.dresscode-divider {
+  position: absolute;
+  top: 20px;
+  bottom: 20px;
+  left: 50%;
+  width: 1px;
+  margin-left: -0.5px;
+  background: #e5e2dc;
+}
+
+@media only screen and (max-width: 991px) {
+  .dresscode-row {
+    justify-content: center;
+  }
+
+  .dresscode-group {
+    width: 100%;
+    flex: 0 0 100%;
+  }
+
+  .dresscode-colors {
+    justify-content: center;
+  }
+
+  .dresscode-divider {
+    position: static;
+    width: 60%;
+    height: 1px;
+    margin: 10px auto;
+  }
+}
+
+
+
+/* =======================================
+4.8. Footer Section (Thank You Section)
 ======================================= */
 .footer {
   position: relative;
