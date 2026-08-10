@@ -18,69 +18,10 @@
     }
     // /Hide Mobile menu
 
-    // Contact form validator
-    $(function () {
-        $('#rsvp-form').validator();
-
-        $('#rsvp-form').on('submit', function (e) {
-            if (!e.isDefaultPrevented()) {
-                var url = "rsvp_form/rsvp_form.php";
-
-                $.ajax({
-                    type: "POST",
-                    url: url,
-                    data: $(this).serialize(),
-                    success: function (data)
-                    {
-                        var messageAlert = 'alert-' + data.type;
-                        var messageText = data.message;
-
-                        var alertBox = '<div class="alert ' + messageAlert + ' alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>' + messageText + '</div>';
-                        if (messageAlert && messageText) {
-                            $('#rsvp-form').find('.messages').html(alertBox);
-                            $('#rsvp-form')[0].reset();
-                        }
-                    }
-                });
-                return false;
-            }
-        });
-    });
-    // /Contact form validator
-
 
     $(window).on('load', function() {
-        var isMobile = {
-            Android: function() {
-                return navigator.userAgent.match(/Android/i);
-            },
-            BlackBerry: function() {
-                return navigator.userAgent.match(/BlackBerry/i);
-            },
-            iOS: function() {
-                return navigator.userAgent.match(/iPhone|iPad|iPod/i);
-            },
-            Opera: function() {
-                return navigator.userAgent.match(/Opera Mini/i);
-            },
-            Windows: function() {
-                return navigator.userAgent.match(/IEMobile/i);
-            },
-            any: function() {
-                return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
-            }
-        };
-
         // Animate page loader
         $(".preloader").fadeOut("slow");
-
-        $.stellar({
-            horizontalScrolling: false,
-            verticalScrolling: !isMobile.any(),
-            verticalOffset: 0,
-            horizontalOffset: 0,
-            responsive: true
-        });
     }).on('resize', function() {
         mobileMenuHide();
     });
