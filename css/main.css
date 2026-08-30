@@ -784,6 +784,15 @@ ul.social-links li a:hover i {
   text-align: left;
 }
 
+.story-row p.story-place {
+  margin-bottom: 2px;
+  letter-spacing: 1px;
+}
+
+.story-row p.story-place + p:not(.story-place) {
+  margin-top: 12px;
+}
+
 .story-image,
 .story-image:hover,
 .story-image:focus {
