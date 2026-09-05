@@ -206,12 +206,26 @@ import { invitados } from './invitados.js';
         }
       });
 
+    var codigo = codeInput.value.trim();
+
+    // Buscar el invitado para conocer el nombre de la invitacion (familia)
+    var invitadoActual = invitados.find(function (item) {
+      return item.codigo === codigo;
+    });
+    var nombreInvitacion = invitadoActual ? invitadoActual.nombreInvitacion : '';
+
+    // Anteponer el nombre de la invitacion al mensaje para saber quien lo escribio
+    var mensaje = messageInput ? messageInput.value.trim() : '';
+    if (mensaje && nombreInvitacion) {
+      mensaje = nombreInvitacion + ': ' + mensaje;
+    }
+
     // JSON listo para enviar por HTTP
     var data = {
-      codigo: codeInput.value.trim(),
+      codigo: codigo,
       confirmados: confirmados,
       desconfirmados: desconfirmados,
-      mensaje: messageInput ? messageInput.value.trim() : ''
+      mensaje: mensaje
     };
 
     // Endpoint del Web App de Google Apps Script (doPost)
