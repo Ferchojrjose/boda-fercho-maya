@@ -131,7 +131,7 @@ export const invitados =
         "Manuel Villagrán",
         "Jullissa Felipe",
         "Nicolas Villagrán",
-        "Alejandro Villagrán (Pino)",
+        "Alejandro Villagrán",
         "Fernanda Santizo"
       ]
     },
@@ -213,7 +213,7 @@ export const invitados =
         "Sara de Serrano",
         "Jennifer Serrano",
         "Katherine Serrano",
-        "Carlos Serrano (Primo)"
+        "Carlos Serrano"
       ]
     },
     {
@@ -302,7 +302,7 @@ export const invitados =
       "codigo": "1022",
       "nombreInvitacion": "Pastores Morales",
       "integrantes": [
-        "Pastor Steve",
+        "Pastor Steve Morales",
         "Pastora Ingrid De Morales"
       ]
     },
@@ -318,6 +318,7 @@ export const invitados =
       "nombreInvitacion": "Familia Ortíz Sarti",
       "integrantes": [
         "Isaac Ortíz",
+        "Alejandra Quiñónez",
         "Moisés Oríz",
         "Cristina Ortíz"
       ]
@@ -378,7 +379,7 @@ export const invitados =
       "nombreInvitacion": "Familia Cruz García",
       "integrantes": [
         "Allan Cruz",
-        "Nereyda Anabel Garcìa Cruz"
+        "Nereyda Garcìa De Cruz"
       ]
     },
     {
@@ -532,6 +533,13 @@ export const invitados =
       "integrantes": [
         "Fernando Serrano",
         "Mariandré Velasquez"
+      ]
+    },
+    {
+      "codigo": "5414",
+      "nombreInvitacion": "Andrés Henao",
+      "integrantes": [
+        "Andrés Henao"
       ]
     }
   ]
