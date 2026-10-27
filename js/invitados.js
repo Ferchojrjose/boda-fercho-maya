@@ -413,9 +413,10 @@ export const invitados =
     },
     {
       "codigo": "8701",
-      "nombreInvitacion": "Brenda Chur",
+      "nombreInvitacion": "Brenda Chur y Kevin Cardona",
       "integrantes": [
-        "Brenda Chur"
+        "Brenda Chur",
+        "Kevin Cardona"
       ]
     },
     {
@@ -537,9 +538,10 @@ export const invitados =
     },
     {
       "codigo": "5414",
-      "nombreInvitacion": "Andrés Henao",
+      "nombreInvitacion": "Andrés Henao y Estefania Rojas Vasco",
       "integrantes": [
-        "Andrés Henao"
+        "Andrés Henao",
+        "Estefania Rojas Vasco"
       ]
     }
   ]
